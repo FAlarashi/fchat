@@ -59,7 +59,7 @@ function App() {
   };
 
   const connectWebSocket = (userId, username) => {
-    const websocket = new WebSocket(`${WS_URL}/ws/${userId}?username=${encodeURIComponent(username)}`);
+    const websocket = new WebSocket(`${WS_URL}/api/ws/${userId}?username=${encodeURIComponent(username)}`);
     
     websocket.onopen = () => {
       console.log('WebSocket connected');
