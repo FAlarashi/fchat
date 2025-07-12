@@ -165,7 +165,7 @@ async def test_relay_connection():
     return {"relay_connection": "success" if success else "failed"}
 
 # WebSocket endpoint
-@app.websocket("/ws/{user_id}")
+@api_router.websocket("/ws/{user_id}")
 async def websocket_endpoint(websocket: WebSocket, user_id: str, username: str = "Anonymous"):
     await manager.connect(websocket, user_id, username)
     try:
